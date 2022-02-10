@@ -3,7 +3,7 @@ const fullName = (firstName = 'Артур', lastName = 'Москвичёв') => 
     let fullName = firstName + space + lastName;
     return fullName;
 }
-
+fullName(); 
 const addNumber = (firstNumber, secondNumber) => {
     let sum = firstNumber + secondNumber;
     return sum;
