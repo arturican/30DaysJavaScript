@@ -3,11 +3,8 @@
   "version": "1.0.0",
   "description": "делаю задания по JS",
   "main": "index.js",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
+
+  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "precommit": "lint-staged",
@@ -27,6 +24,11 @@
     "./**/*.css": [
       "stylelint --fix"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "repository": {
     "type": "git",
