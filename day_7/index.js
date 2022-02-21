@@ -1,65 +1,65 @@
 const fullName = (firstName = 'Артур', lastName = 'Москвичёв') => {
   let space = ' ';
   let fullName = firstName + space + lastName;
-  return fullName;
+  return console.log(fullName);
 };
-fullName();
+fullName('Денис', 'Токарев');
 
-const addNumber = (firstNumber, secondNumber) => {
+const addNumbers = (firstNumber, secondNumber) => {
   let sum = firstNumber + secondNumber;
-  return sum;
+  return console.log(sum);
 };
 
-addNumber();
+addNumbers(1, 2);
 
 const areaOfRectangle = (length, width) => {
   let area = length * width;
-  return area;
+  return console.log(area);
 };
 
-areaOfRectangle();
+areaOfRectangle(10, 8);
 
 const perimeterOfRectangle = (length, width) => {
   let perimeter = 2 * (length + width);
-  return perimeter;
+  return console.log(perimeter);
 };
 
-perimeterOfRectangle();
+perimeterOfRectangle(10, 8);
 
 const volumeOfRectPrism = (length, width, heigth) => {
   let volume = length * width * heigth;
-  return volume;
+  return console.log(volume);
 };
 
-volumeOfRectPrism();
+volumeOfRectPrism(10, 12, 13);
 
 const areaOfCircle = (radius) => {
   let areaCircle = Math.PI * radius * radius;
-  return areaCircle;
+  return console.log(areaCircle);
 };
 
-areaOfCircle();
+areaOfCircle(10);
 
 const lengthOfCircle = (radius) => {
   let lengthCircle = 2 * Math.PI * radius;
-  return lengthCircle;
+  return console.log(lengthCircle);
 };
 
-lengthOfCircle();
+lengthOfCircle(10);
 
 const density = (weight, volume) => {
-  let density = weight / volume;
-  return density;
+  let Density = weight / volume;
+  return console.log(Density);
 };
 
-density();
+density(10, 12);
 
 const speed = (distance, time) => {
   let speed = distance / time;
-  return speed;
+  return console.log(speed);
 };
 
-speed();
+speed(100, 2);
 
 const ITM = (weight, heigth) => {
   let itm = weight / (heigth * heigth);
@@ -74,7 +74,7 @@ const ITM = (weight, heigth) => {
   }
 };
 
-ITM();
+ITM(180, 108);
 
 const checkSeason = (month) => {
   if (month == 'декабрь' || month == 'январь' || month == 'февраль') {
@@ -88,7 +88,7 @@ const checkSeason = (month) => {
   }
 };
 
-checkSeason();
+checkSeason('февраль');
 
 const findMax = (firstNumber, secondNumber, thirdNumber) => {
   if (firstNumber >= secondNumber && firstNumber >= thirdNumber) {
@@ -100,7 +100,7 @@ const findMax = (firstNumber, secondNumber, thirdNumber) => {
   }
 };
 
-findMax();
+findMax(1, 0, 2);
 
 /*const solveLinEquation = (a, b, c) => {
   let x = (-(b * y) - c) / -a;
@@ -121,7 +121,7 @@ const solveQuadratic = (a, b, c) => {
   }
 };
 
-solveQuadratic();
+solveQuadratic(1, 2, 3);
 
 const printArray = () => {
   let countries = [
@@ -135,233 +135,6 @@ const printArray = () => {
     'Antigua and Barbuda',
     'Argentina',
     'Armenia',
-    'Aruba',
-    'Australia',
-    'Austria',
-    'Azerbaijan',
-    'Bangladesh',
-    'Barbados',
-    'Bahamas',
-    'Bahrain',
-    'Belarus',
-    'Belgium',
-    'Belize',
-    'Benin',
-    'Bermuda',
-    'Bhutan',
-    'Bolivia',
-    'Bosnia and Herzegovina',
-    'Botswana',
-    'Brazil',
-    'British Indian Ocean Territory',
-    'British Virgin Islands',
-    'Brunei Darussalam',
-    'Bulgaria',
-    'Burkina Faso',
-    'Burma',
-    'Burundi',
-    'Cambodia',
-    'Cameroon',
-    'Canada',
-    'Cape Verde',
-    'Cayman Islands',
-    'Central African Republic',
-    'Chad',
-    'Chile',
-    'China',
-    'Christmas Island',
-    'Cocos (Keeling) Islands',
-    'Colombia',
-    'Comoros',
-    'Congo-Brazzaville',
-    'Congo-Kinshasa',
-    'Cook Islands',
-    'Costa Rica',
-    'Croatia',
-    'Cura?ao',
-    'Cyprus',
-    'Czech Republic',
-    'Denmark',
-    'Djibouti',
-    'Dominica',
-    'Dominican Republic',
-    'East Timor',
-    'Ecuador',
-    'El Salvador',
-    'Egypt',
-    'Equatorial Guinea',
-    'Eritrea',
-    'Estonia',
-    'Ethiopia',
-    'Falkland Islands',
-    'Faroe Islands',
-    'Federated States of Micronesia',
-    'Fiji',
-    'Finland',
-    'France',
-    'French Guiana',
-    'French Polynesia',
-    'French Southern Lands',
-    'Gabon',
-    'Gambia',
-    'Georgia',
-    'Germany',
-    'Ghana',
-    'Gibraltar',
-    'Greece',
-    'Greenland',
-    'Grenada',
-    'Guadeloupe',
-    'Guam',
-    'Guatemala',
-    'Guernsey',
-    'Guinea',
-    'Guinea-Bissau',
-    'Guyana',
-    'Haiti',
-    'Heard and McDonald Islands',
-    'Honduras',
-    'Hong Kong',
-    'Hungary',
-    'Iceland',
-    'India',
-    'Indonesia',
-    'Iraq',
-    'Ireland',
-    'Isle of Man',
-    'Israel',
-    'Italy',
-    'Jamaica',
-    'Japan',
-    'Jersey',
-    'Jordan',
-    'Kazakhstan',
-    'Kenya',
-    'Kiribati',
-    'Kuwait',
-    'Kyrgyzstan',
-    'Laos',
-    'Latvia',
-    'Lebanon',
-    'Lesotho',
-    'Liberia',
-    'Libya',
-    'Liechtenstein',
-    'Lithuania',
-    'Luxembourg',
-    'Macau',
-    'Macedonia',
-    'Madagascar',
-    'Malawi',
-    'Malaysia',
-    'Maldives',
-    'Mali',
-    'Malta',
-    'Marshall Islands',
-    'Martinique',
-    'Mauritania',
-    'Mauritius',
-    'Mayotte',
-    'Mexico',
-    'Moldova',
-    'Monaco',
-    'Mongolia',
-    'Montenegro',
-    'Montserrat',
-    'Morocco',
-    'Mozambique',
-    'Namibia',
-    'Nauru',
-    'Nepal',
-    'Netherlands',
-    'New Caledonia',
-    'New Zealand',
-    'Nicaragua',
-    'Niger',
-    'Nigeria',
-    'Niue',
-    'Norfolk Island',
-    'Northern Mariana Islands',
-    'Norway',
-    'Oman',
-    'Pakistan',
-    'Palau',
-    'Panama',
-    'Papua New Guinea',
-    'Paraguay',
-    'Peru',
-    'Philippines',
-    'Pitcairn Islands',
-    'Poland',
-    'Portugal',
-    'Puerto Rico',
-    'Qatar',
-    'R?union',
-    'Romania',
-    'Russia',
-    'Rwanda',
-    'Saint Barth?lemy',
-    'Saint Helena',
-    'Saint Kitts and Nevis',
-    'Saint Lucia',
-    'Saint Martin',
-    'Saint Pierre and Miquelon',
-    'Saint Vincent',
-    'Samoa',
-    'San Marino',
-    'S?o Tom? and Pr?ncipe',
-    'Saudi Arabia',
-    'Senegal',
-    'Serbia',
-    'Seychelles',
-    'Sierra Leone',
-    'Singapore',
-    'Sint Maarten',
-    'Slovakia',
-    'Slovenia',
-    'Solomon Islands',
-    'Somalia',
-    'South Africa',
-    'South Georgia',
-    'South Korea',
-    'Spain',
-    'Sri Lanka',
-    'Sudan',
-    'Suriname',
-    'Svalbard and Jan Mayen',
-    'Sweden',
-    'Swaziland',
-    'Switzerland',
-    'Syria',
-    'Taiwan',
-    'Tajikistan',
-    'Tanzania',
-    'Thailand',
-    'Togo',
-    'Tokelau',
-    'Tonga',
-    'Trinidad and Tobago',
-    'Tunisia',
-    'Turkey',
-    'Turkmenistan',
-    'Turks and Caicos Islands',
-    'Tuvalu',
-    'Uganda',
-    'Ukraine',
-    'United Arab Emirates',
-    'United Kingdom',
-    'United States',
-    'Uruguay',
-    'Uzbekistan',
-    'Vanuatu',
-    'Vatican City',
-    'Vietnam',
-    'Venezuela',
-    'Wallis and Futuna',
-    'Western Sahara',
-    'Yemen',
-    'Zambia',
-    'Zimbabwe',
   ];
   for (const element of countries) {
     console.log(element);
@@ -393,7 +166,7 @@ const swapValues = (x, y) => {
   return console.log(x, y);
 };
 
-swapValues();
+swapValues(1, 2);
 
 let newArr = [];
 const reverseArray = (arr) => {
@@ -418,7 +191,7 @@ const rgbColorGenerator = (count) => {
   return console.log(array);
 };
 
-rgbColorGenerator();
+rgbColorGenerator(3);
 
 const arrayOfHexaColors = (count) => {
   let hexa = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
@@ -433,7 +206,7 @@ const arrayOfHexaColors = (count) => {
   return console.log(array);
 };
 
-arrayOfHexaColors();
+arrayOfHexaColors(3);
 
 const convertHexaToRgb = (hexa) => {
   let arr = [];
@@ -507,10 +280,10 @@ const convertRGBtoHex = (hexa) => {
     }
   }
   arr3[0] = String(arr2[0]) + String(arr2[1]) + String(arr2[2]) + String(arr2[3]) + String(arr2[4]) + String(arr2[5]);
-  return console.log(arr3);
+  return arr3;
 };
 
-convertRGBtoHex();
+convertRGBtoHex('30,20,10');
 
 const generateColors = (numberName, count) => {
   if (numberName == 'hex') {
@@ -519,4 +292,4 @@ const generateColors = (numberName, count) => {
     rgbColorGenerator(count);
   }
 };
-generateColors();
+generateColors('hex', 2);
