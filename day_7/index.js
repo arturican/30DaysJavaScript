@@ -81,10 +81,10 @@ const findMax = (firstNumber, secondNumber, thirdNumber) => {
         return console.log(thirdNumber);
     }
 }
-let a = 10;
-let b = 2;
-let c = 0;
-const solveLinEquation = (a, b, c) => {
+    let a = 10;
+    let b = 2;
+    let c = 0;
+    const solveLinEquation = (a, b, c) => {
     x = (-(b * y) - c) / (-a);
     y = ((-a * x) - c) / (-b);
     return console.log(x, y);
