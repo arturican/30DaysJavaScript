@@ -158,11 +158,20 @@ const userIdGenerator = () => {
     return console.log(str2);
 }
 
-const rgbColorGenerator = () => {
-    let r = (Math.floor(Math.random() * 255 + 1));
-    let g = (Math.floor(Math.random() * 255 + 1));
-    let b = (Math.floor(Math.random() * 255 + 1));
-    return console.log(`rga(${r},${g},${b})`);
+const rgbColorGenerator = (count) => {
+    let array = [];
+    for (i = 0; i <= count - 1; i++) {
+        let str = '';
+        for (j = 0; j <= 2; j++) {
+            str += String((Math.floor(Math.random() * 255 + 1))) + ',';
+        }
+        let str2 = str.substring(0, str.length - 1);
+        array.push(str2);
+
+
+
+    }
+    return console.log(array);
 }
 
 const arrayOfHexaColors = (count) => {
@@ -170,7 +179,7 @@ const arrayOfHexaColors = (count) => {
     let array = [];
 
 
-    for (i = 0; i <= count; i++) {
+    for (i = 0; i <= count - 1; i++) {
         let str = '';
         for (j = 0; j <= 6; j++) {
             str += hexa[Math.floor(Math.random() * 15 + 1)];
@@ -279,4 +288,33 @@ const convertRGBtoHex = (hexa) => {
     return console.log(arr3);
 
 }
-convertRGBtoHex('150, 140, 151');
+
+
+const arrayOfHexaColors2 = (count) => {
+    let hexa = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
+    let array = [];
+
+
+    for (i = 0; i <= count; i++) {
+        let str = '';
+        for (j = 0; j <= 6; j++) {
+            str += hexa[Math.floor(Math.random() * 15 + 1)];
+        }
+        array.push('#' + str);
+
+    }
+
+    return console.log(array);
+}
+
+const generateColors = (numberName, count) => {
+    if (numberName == 'hex') {
+        arrayOfHexaColors2(count);
+    } else if (numberName == 'rgb') {
+        rgbColorGenerator(count);
+
+    }
+
+}
+
+generateColors('rgb', 2);
