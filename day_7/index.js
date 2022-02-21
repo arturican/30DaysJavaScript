@@ -102,14 +102,14 @@ const findMax = (firstNumber, secondNumber, thirdNumber) => {
 
 findMax();
 
-const solveLinEquation = (a, b, c) => {
+/*const solveLinEquation = (a, b, c) => {
   let x = (-(b * y) - c) / -a;
   let y = (-a * x - c) / -b;
   return console.log(x, y);
 };
 
 solveLinEquation();
-
+*/
 const solveQuadratic = (a, b, c) => {
   let D = b * b - 4 * a * c;
   if (D < 0) {
@@ -403,7 +403,7 @@ const reverseArray = (arr) => {
   return console.log(newArr);
 };
 
-reverseArray();
+reverseArray([1, 2]);
 
 const rgbColorGenerator = (count) => {
   let array = [];
@@ -470,7 +470,7 @@ const convertHexaToRgb = (hexa) => {
   return console.log('RGB (' + R + ',' + G + ',' + B + ')');
 };
 
-convertHexaToRgb();
+convertHexaToRgb('#41aabb');
 
 const convertRGBtoHex = (hexa) => {
   let arr = [];
