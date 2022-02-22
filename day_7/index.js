@@ -300,3 +300,12 @@ const shuffleArray = (array) => {
 };
 
 shuffleArray(arr);
+
+const factorial = (number) => {
+  for (let i = number - 1; i > 0; i--) {
+    number *= i;
+  }
+  return console.log(number);
+};
+
+factorial(5);
