@@ -435,3 +435,17 @@ const sumOfArrayItems = (array) => {
 };
 
 sumOfArrayItems([1, 2, 'хуй', 4, 5]);
+
+const medium = (array) => {
+  let sum = 0;
+  for (let i = 0; i <= array.length - 1; i++) {
+    if (typeof array[i] === 'number') {
+      sum += array[i];
+    } else {
+      return console.log('элемент массива не является числом');
+    }
+  }
+  return console.log(sum / array.length);
+};
+
+medium([1, 2, 'хуй', 4, 5]);
