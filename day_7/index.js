@@ -449,3 +449,16 @@ const medium = (array) => {
 };
 
 medium([1, 2, 'хуй', 4, 5]);
+
+const modifyArray = (array) => {
+  for (let i = 0; i <= array.length - 1; i++) {
+    if (array.length - 1 < 4) {
+      return console.log('Not Found');
+    } else {
+      array[4] = array[4].toUpperCase();
+    }
+  }
+  return console.log(array);
+};
+
+modifyArray(['Google', 'Facebook', 'Apple', 'Amazon']);
