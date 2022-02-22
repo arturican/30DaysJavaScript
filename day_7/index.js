@@ -191,6 +191,98 @@ const rgbColorGenerator = (count) => {
   return console.log(array);
 };
 
+const countries1 = [
+  'Afghanistan',
+  'Albania',
+  'Algeria',
+  'Andorra',
+  'Angola',
+  'Antigua and Barbuda',
+  'Argentina',
+  'Armenia',
+  'Australia',
+];
+
+const capitalizeArray = (arr) => {
+  let array = [];
+  for (let i = 0; i <= arr.length; i++) {
+    array.push(countries1[i]);
+  }
+  let str = array.join(',').toLocaleUpperCase();
+  array = str.split(',');
+  return console.log(array);
+};
+
+capitalizeArray(countries1);
+
+const addItem = (item) => {
+  let arrayItem = [];
+  arrayItem.push(item);
+  return console.log(arrayItem);
+};
+
+addItem(countries1);
+
+const sumOfNumbers = (number) => {
+  let sum = 0;
+  for (let i = 0; i <= number; i++) {
+    sum += i;
+  }
+  return console.log(sum);
+};
+
+sumOfNumbers(3);
+
+const sumOfOdds = (number) => {
+  let sumr = 0;
+  for (let i = 0; i <= number; i++) {
+    if (i % 2 !== 0) {
+      sumr += i;
+    }
+  }
+  return console.log(sumr);
+};
+
+sumOfOdds(10);
+
+const evensAndOdds = (number) => {
+  let sumr = 0;
+  let sum = 0;
+  for (let i = 0; i <= number; i++) {
+    if (i % 2 !== 0) {
+      sumr += 1;
+    } else if (i % 2 == 0) {
+      sum += 1;
+    }
+  }
+  return console.log(sumr, sum);
+};
+
+evensAndOdds(10);
+
+const summ = (...args) => {
+  let sum = 0;
+  for (const elemts of args) {
+    sum += elemts;
+  }
+  return console.log(sum);
+};
+
+summ(10);
+
+const randomMacAddress = () => {
+  let arr16 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
+  let a = arr16[Math.floor(Math.random() * 15) + 1];
+  let b = arr16[Math.floor(Math.random() * 15) + 1];
+  let c = arr16[Math.floor(Math.random() * 15) + 1];
+  let d = arr16[Math.floor(Math.random() * 15) + 1];
+  let e = arr16[Math.floor(Math.random() * 15) + 1];
+  let f = arr16[Math.floor(Math.random() * 15) + 1];
+  return console.log('#' + `${a}${b}${c}${d}${e}${f}`);
+};
+
+randomMacAddress();
+
 rgbColorGenerator(3);
 
 const arrayOfHexaColors = (count) => {
