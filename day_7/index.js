@@ -309,3 +309,13 @@ const factorial = (number) => {
 };
 
 factorial(5);
+
+const isEmpty = (check) => {
+  if (check == true) {
+    return console.log('Параметр не пустой');
+  } else {
+    return console.log('Параметр  пустой');
+  }
+};
+
+isEmpty(1);
