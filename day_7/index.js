@@ -421,3 +421,17 @@ const sumAllNumbs = (...args) => {
 };
 
 sumAllNumbs(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+const sumOfArrayItems = (array) => {
+  let sum = 0;
+  for (let i = 0; i <= array.length - 1; i++) {
+    if (typeof array[i] === 'number') {
+      sum += array[i];
+    } else {
+      return console.log('элемент массива не является числом');
+    }
+  }
+  return console.log(sum);
+};
+
+sumOfArrayItems([1, 2, 'хуй', 4, 5]);
