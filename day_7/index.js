@@ -478,3 +478,19 @@ const isPrime = (number) => {
   }
 };
 isPrime(71);
+
+const isCheckArray = (array) => {
+  let newArr = [];
+  for (let i = 0; i <= array.length - 1; i++) {
+    newArr.push(array[i]);
+  }
+  for (let j = 0; j <= array.length - 1; j++) {
+    if (typeof newArr[j] === typeof array[j]) {
+      return console.log('элементы массива уникальны');
+    } else {
+      return console.log('элементы массива неуникальны');
+    }
+  }
+};
+
+isCheckArray([1, 'хуй', 3]);
