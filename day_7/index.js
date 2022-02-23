@@ -462,3 +462,19 @@ const modifyArray = (array) => {
 };
 
 modifyArray(['Google', 'Facebook', 'Apple', 'Amazon']);
+
+const isPrime = (number) => {
+  let a = 0;
+  for (let i = 2; i <= number; i++) {
+    if (number % i == 0) {
+      a += 1;
+    }
+  }
+  console.log(a);
+  if (a < 2) {
+    return console.log('простое число');
+  } else {
+    return console.log('Не простое число');
+  }
+};
+isPrime(71);
