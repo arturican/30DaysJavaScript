@@ -481,17 +481,17 @@ isPrime(71);
 
 const isCheckArray = (array) => {
   let newArr = [];
+  let count = 0;
   for (let i = 0; i <= array.length - 1; i++) {
     newArr.push(array[i]);
-    console.log(typeof newArr[i]);
-  }
-
-  for (let j = 0; j <= array.length - 1; j++) {
-    if (typeof newArr[j] === typeof array[j]) {
-      return console.log('элементы массива уникальны');
-    } else {
-      return console.log('элементы массива неуникальны');
+    if (typeof newArr.indexOf(0) == typeof newArr[i]) {
+      count += 1;
     }
+  }
+  if (count === array.length) {
+    return console.log('Элементы уникальны');
+  } else {
+    return console.log('Элементы не уникальны');
   }
 };
 
