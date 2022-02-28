@@ -483,7 +483,9 @@ const isCheckArray = (array) => {
   let newArr = [];
   for (let i = 0; i <= array.length - 1; i++) {
     newArr.push(array[i]);
+    console.log(typeof newArr[i]);
   }
+
   for (let j = 0; j <= array.length - 1; j++) {
     if (typeof newArr[j] === typeof array[j]) {
       return console.log('элементы массива уникальны');
@@ -494,3 +496,27 @@ const isCheckArray = (array) => {
 };
 
 isCheckArray([1, 'хуй', 3]);
+
+const isValidVariable = (value) => {
+  let valid = /_\$|_|\$/g;
+  if (value.match(valid)) {
+    return console.log('Не допустимая переменная');
+  } else {
+    return console.log('допустимая переменная');
+  }
+};
+
+isValidVariable('aa__');
+
+const SevenRandomNumbers = () => {
+  let arr = [];
+  while (arr.length <= 6) {
+    let randomNumber = Math.floor(Math.random() * 9 + 1);
+    if (arr.lastIndexOf(randomNumber) == -1) {
+      arr.push(randomNumber);
+    }
+  }
+  return console.log(arr);
+};
+
+SevenRandomNumbers();
