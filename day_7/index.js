@@ -520,3 +520,24 @@ const SevenRandomNumbers = () => {
 };
 
 SevenRandomNumbers();
+
+const reverseCountries = (arry) => {
+  let newArr = arry;
+  arry = [];
+  for (let i = newArr.length - 1; i >= 0; i--) {
+    arry.push(newArr[i]);
+  }
+  return console.log(arry);
+};
+
+reverseCountries([
+  'Afghanistan',
+  'Albania',
+  'Algeria',
+  'Andorra',
+  'Angola',
+  'Antigua and Barbuda',
+  'Argentina',
+  'Armenia',
+  'Australia',
+]);
