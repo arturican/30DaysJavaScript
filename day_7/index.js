@@ -96,12 +96,23 @@ checkSeason('февраль');
 
 const findMax = (firstNumber, secondNumber, thirdNumber) => {
   if (firstNumber >= secondNumber && firstNumber >= thirdNumber) {
+    // Здесь firstNumber больше, чем и secondNumber, и thirdNumber
     return console.log(firstNumber);
-  } else if (secondNumber >= firstNumber && secondNumber >= thirdNumber) {
+  } 
+  
+  // Здесь firstNumber меньше либо secondNumber, либо thirdNumber
+  // Это значит, что firstNumber точно не максимум, и максимум надо искать среди
+  // secondNumber и thirdNumber, даже если одно из этих чисел может быть меньше,
+  // чем firstNumber – нам уже похуй на firstNumber в принципе, потому что он 
+  // заведомо не подходит
+  if (secondNumber >= thirdNumber) {
+    // Раз secondNumber больше thirdNumber, он самый большой 
+    // (а thirdNumber либо самый маленький, либо средний, но нам это всё уже не важно)
     return console.log(secondNumber);
-  } else if (thirdNumber >= firstNumber && thirdNumber >= secondNumber) {
-    return console.log(thirdNumber);
-  }
+  } 
+    
+  // Если secondNumber меньше thirdNumber, то thirdNumber самый большой
+  return console.log(thirdNumber);
 };
 
 findMax(1, 0, 2);
