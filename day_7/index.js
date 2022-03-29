@@ -65,13 +65,17 @@ const ITM = (weight, heigth) => {
   let itm = weight / (heigth * heigth);
   if (itm < 18.5) {
     return console.log('Недостаточный вес');
-  } else if (itm >= 18.5 && itm <= 24.9) {
+  } 
+  
+  if (itm <= 24.9) {
     return console.log('Нормальный вес');
-  } else if (itm >= 25 && itm <= 29.9) {
+  } 
+  
+  if (itm <= 29.9) {
     return console.log('Избыточный вес');
-  } else {
-    return console.log('Ожирение');
-  }
+  } 
+  
+  return console.log('Ожирение');
 };
 
 ITM(180, 108);
