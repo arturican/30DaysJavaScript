@@ -269,15 +269,11 @@ const evensAndOdds = (number) => {
 
 evensAndOdds(11);
 
-const summ = (...args) => {
-    let sum = 0;
-    for (const elemts of args) {
-        sum += elemts;
-    }
-    return console.log(sum);
+const summ = (...theArgs) => {
+    return theArgs.reduce((sum, current) => sum + current, 0)
 };
 
-summ(10);
+summ(1, 3, 10);
 
 const randomMacAddress = () => {
     let arr16 = [];
