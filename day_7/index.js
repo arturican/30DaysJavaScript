@@ -99,6 +99,8 @@ const findMax = (firstNumber, secondNumber, thirdNumber) => {
 };
 
 findMax(1, 0, 2);
+// Вторая часть заданий 
+
 
 /*const solveLinEquation = (a, b, c) => {
   let x = (-(b * y) - c) / -a;
@@ -108,6 +110,7 @@ findMax(1, 0, 2);
 
 solveLinEquation();
 */
+
 const solveQuadratic = (a, b, c) => {
     let D = b * b - 4 * a * c;
     let squareDiscriminant = Math.sqrt(D);
@@ -161,7 +164,7 @@ showDateTime();
 const swapValues = (x, y) => {
     let [a, b] = [x, y];
     [x, y] = [b, a];
-    return console.log(x, y);
+    console.log(x, y);
 };
 
 swapValues(1, 2);
@@ -171,31 +174,31 @@ const reverseArray = (arr) => {
     for (let i = arr.length - 1; i >= 0; i--) {
         newArr.push(arr[i]);
     }
-    return console.log(newArr);
+    return newArr;
 };
 
 reverseArray([1, 2]);
 
-const capitalizeArray = () => {
-    const countries1 = [
-        'Afghanistan',
-        'Albania',
-        'Algeria',
-        'Andorra',
-        'Angola',
-        'Antigua and Barbuda',
-        'Argentina',
-        'Armenia',
-        'Australia',
-    ];
+const capitalizeArray = (arrCoounries1) => {
+
     const upperCase = (item) => {
         return item.toUpperCase();
     };
-    let arr = countries1.map(upperCase);
-    return console.log(arr);
+    let arr = arrCoounries1.map(upperCase);
+    return arr;
 };
 
-capitalizeArray();
+capitalizeArray([
+    'Afghanistan',
+    'Albania',
+    'Algeria',
+    'Andorra',
+    'Angola',
+    'Antigua and Barbuda',
+    'Argentina',
+    'Armenia',
+    'Australia',
+]);
 
 const addItem = (item) => [item];
 addItem('хуй');
@@ -212,7 +215,7 @@ const removeItem = (item) => {
         'Armenia',
         'Australia',
     ];
-    countries1.splice(item, item);
+    countries1.splice(item, 1);
     return countries1;
 };
 
@@ -242,30 +245,29 @@ sumOfNumbersSecond(3);
 
 const sumOfOdds = (number) => {
     let sumr = 0;
-    for (let i = 0; i <= number; i++) {
-        if (i % 2 !== 0) {
-            sumr += i;
-        }
+    for (let i = 1; i <= number; i += 2) {
+        sumr += i;
     }
-    return console.log(sumr);
+    return sumr;
 };
 
 sumOfOdds(10);
 
 const evensAndOdds = (number) => {
-    let sumr = 0;
-    let sum = 0;
-    for (let i = 0; i <= number; i++) {
-        if (i % 2 !== 0) {
-            sumr += 1;
-        } else if (i % 2 == 0) {
-            sum += 1;
-        }
+    let evens;
+    let odds;
+    if (number % 2 === 0) {
+        evens = number / 2 + 1;
+        odds = number / 2;
+    } else {
+        evens = Math.floor(number / 2);
+        odds = Math.floor(number / 2 + 1);
     }
-    return console.log(sumr, sum);
+
+    console.log('Четных чисел ' + evens + ' ' + 'Нечетных чисел ' + odds);
 };
 
-evensAndOdds(10);
+evensAndOdds(11);
 
 const summ = (...args) => {
     let sum = 0;
@@ -380,15 +382,15 @@ const convertRGBtoHex = (rgb) => {
 
 convertRGBtoHex('120, 120, 120');
 
-/*const generateColors = (numberName, count) => {
+const generateColors = (numberName, count) => {
     if (numberName == 'hex') {
         arrayOfHexaColors(count);
     } else if (numberName == 'rgb') {
-        rgbColorGenerator(count);
+        // rgbColorGenerator(count);
     }
 };
 generateColors('hex', 2);
-*/
+
 let arr = [1, 2, 3];
 const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
