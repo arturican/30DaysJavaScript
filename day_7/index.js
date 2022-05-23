@@ -312,9 +312,27 @@ randomHexaNumberGenerator();
 
 const userIdGenerator = () => {
     let userId = Math.random().toString(36).substring(2,9);
-    return userId
+    return userId;
 }
 userIdGenerator();
+
+const userIdGeneratorSecond = () => {
+    let symbol = prompt('Введите количество символов');
+    let generator = prompt('Введите количество генераций');
+    let str = 'ABCDEFGHIJKLMNOPQRSTUVWYZXabcdefghijklmnopqrstuvwxyz0123456789';
+    let str20 = '';
+    for (let j = 0; j <= generator - 1; j++) {
+      for (let i = 0; i <= symbol - 1; i++) {
+        str20 += str.charAt(Math.floor(Math.random() * (str.length - 1)));
+      }
+      str20 = str20 + '\n';
+    }
+  
+    return console.log(str20);
+  };
+
+userIdGeneratorSecond();
+  
 
 const arrayOfHexaColors = (count) => {
     let hexa = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
