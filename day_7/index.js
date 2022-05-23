@@ -275,6 +275,17 @@ const summ = (...theArgs) => {
 
 summ(1, 3, 10);
 
+const randomUserIp = () => {
+    let arr = [];
+    for (let i = 0; arr.length < 4; i++){
+        arr.push((Math.floor(Math.random() * 255)) + 1)
+    }
+
+    return `${arr[0]}.${arr[1]}.${arr[2]}.${arr[3]}`;
+}
+
+randomUserIp();
+
 const randomMacAddress = () => {
     let arr16 = [];
     for (let i = 0; arr16.length < 6; i++) {
