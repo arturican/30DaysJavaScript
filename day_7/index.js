@@ -303,6 +303,13 @@ const randomMacAddress = () => {
 
 randomMacAddress();
 
+const randomHexaNumberGenerator = () => {
+    let HexaNumber = (Math.floor(Math.random() * 10000000)).toString(16);
+    return HexaNumber;
+}
+
+randomHexaNumberGenerator();
+
 const arrayOfHexaColors = (count) => {
     let hexa = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
     let array = [];
