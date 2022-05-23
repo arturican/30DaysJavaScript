@@ -289,7 +289,7 @@ randomUserIp();
 const randomMacAddress = () => {
     let arr16 = [];
     for (let i = 0; arr16.length < 6; i++) {
-        arr16.push(Math.floor(Math.random() * 255).toString(16));
+        arr16.push((Math.floor(Math.random() * 255) +1).toString(16));
     }
     for (let j = 0; j < arr16.length; j++) {
         if (arr16[j].length < 2) {
