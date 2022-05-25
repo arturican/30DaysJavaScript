@@ -359,12 +359,10 @@ arrayOfHexaColors(3000);
 
 const arrayOfRgbColors = (count) => {
     let array = [];
-
     for (let i = 0; i < count; i++) {
         let str = [];
         for (let j = 0; j < 3; j++) {
             str.push(Math.floor(Math.random() * 255 + 1));
-
         }
         array.push('rgb (' + str + ')');
     }
