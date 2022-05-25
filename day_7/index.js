@@ -277,7 +277,7 @@ summ(1, 3, 10);
 
 const randomUserIp = () => {
     let arr = [];
-    for (let i = 0; arr.length < 4; i++){
+    for (let i = 0; arr.length < 4; i++) {
         arr.push((Math.floor(Math.random() * 255)) + 1)
     }
 
@@ -289,7 +289,7 @@ randomUserIp();
 const randomMacAddress = () => {
     let arr16 = [];
     for (let i = 0; arr16.length < 6; i++) {
-        arr16.push((Math.floor(Math.random() * 255) +1).toString(16));
+        arr16.push((Math.floor(Math.random() * 255) + 1).toString(16));
     }
     for (let j = 0; j < arr16.length; j++) {
         if (arr16[j].length < 2) {
@@ -311,7 +311,7 @@ const randomHexaNumberGenerator = () => {
 randomHexaNumberGenerator();
 
 const userIdGenerator = () => {
-    let userId = Math.random().toString(36).substring(2,9);
+    let userId = Math.random().toString(36).substring(2, 9);
     return userId;
 }
 userIdGenerator();
@@ -322,41 +322,40 @@ const userIdGeneratorSecond = () => {
     let str = 'ABCDEFGHIJKLMNOPQRSTUVWYZXabcdefghijklmnopqrstuvwxyz0123456789';
     let str2 = '';
     for (let j = 0; j <= generator - 1; j++) {
-      for (let i = 0; i <= symbol - 1; i++) {
-        str2 += str.charAt(Math.floor(Math.random() * (str.length - 1)));
-      }
-      str2 = str2 + '\n';
+        for (let i = 0; i <= symbol - 1; i++) {
+            str2 += str.charAt(Math.floor(Math.random() * (str.length - 1)));
+        }
+        str2 = str2 + '\n';
     }
-  
+
     return console.log(str2);
-  };
+};
 
 userIdGeneratorSecond();
 
 const rgbColorGenerator = () => {
     let arr = [];
-    for (let i = 0; i < 3; i++){
+    for (let i = 0; i < 3; i++) {
         arr.push(Math.floor(Math.random() * 255 + 1));
     }
-    let rgbColor = 'rgb(' + arr.join() + ')' 
+    let rgbColor = 'rgb(' + arr.join() + ')'
     return rgbColor;
 }
-rgbColorGenerator ();
+rgbColorGenerator();
 
 const arrayOfHexaColors = (count) => {
-    let hexa = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
     let array = [];
-    for (let i = 0; i <= count - 1; i++) {
+    for (let i = 0; i < count; i++) {
         let str = '';
-        for (let j = 0; j <= 6; j++) {
-            str += hexa[Math.floor(Math.random() * 15 + 1)];
+        for (let j = 0; j < 3; j++) {
+            str += Math.floor(Math.random() * 255 + 1).toString(16);
         }
         array.push('#' + str);
     }
     return console.log(array);
 };
 
-arrayOfHexaColors(3);
+arrayOfHexaColors(3000);
 
 const convertHexaToRgb = (hexa) => {
     let arr = [];
