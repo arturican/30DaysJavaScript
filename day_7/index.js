@@ -376,41 +376,14 @@ const convertHexaToRgb = (hex) => {
     return `rgb(${rgbColorComponents.join(',')})`;
 };
 
-convertHexaToRgb('#41aabb');
+convertHexaToRgb('#bff63');
 
 const convertRGBtoHex = (rgb) => {
-    let arr = [];
-    let arr2 = [];
-    let arr3 = [];
-    let str = String(rgb);
-    arr = str.split(',');
-    arr2[0] = Math.floor(+arr[0] / 16);
-    arr2[1] = +arr[0] % 16;
-    arr2[2] = Math.floor(+arr[1] / 16);
-    arr2[3] = +arr[1] % 16;
-    arr2[4] = Math.floor(+arr[2] / 16);
-    arr2[5] = +arr[2] % 16;
-
-    for (let j = 0; j <= arr2.length - 1; j++) {
-        if (arr2[j] === 10) {
-            arr2[j] = 'a';
-        } else if (arr2[j] === 11) {
-            arr2[j] = 'b';
-        } else if (arr2[j] === 12) {
-            arr2[j] = 'c';
-        } else if (arr2[j] === 13) {
-            arr2[j] = 'd';
-        } else if (arr2[j] === 14) {
-            arr2[j] = 'e';
-        } else if (arr2[j] === 15) {
-            arr2[j] = 'f';
-        }
-    }
-    arr3[0] = String(arr2[0]) + String(arr2[1]) + String(arr2[2]) + String(arr2[3]) + String(arr2[4]) + String(arr2[5]);
-    return console.log(arr3);
+    const hexColorComponents = rgb.match(/\d+/g).map(Number).map((v) => v.toString(16));
+    return '#' + hexColorComponents.join('');
 };
 
-convertRGBtoHex('120, 120, 120');
+convertRGBtoHex('rgb(11, 255, 99)');
 
 const generateColors = (numberName, count) => {
     if (numberName == 'hex') {
