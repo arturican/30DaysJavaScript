@@ -352,7 +352,7 @@ const arrayOfHexaColors = (count) => {
         }
         array.push('#' + str);
     }
-    return console.log(array);
+    return array;
 };
 
 arrayOfHexaColors(3000);
