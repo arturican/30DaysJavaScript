@@ -371,39 +371,9 @@ const arrayOfRgbColors = (count) => {
 
 arrayOfRgbColors(3000);
 
-const convertHexaToRgb = (hexa) => {
-    let arr = [];
-    let str = hexa;
-    let str21 = '';
-    if (str[0] === '#') {
-        for (let i = 1; i <= str.length - 1; i++) {
-            str21 += str[i];
-        }
-    }
-    arr = str21.split('');
-    for (let j = 0; j <= arr.length - 1; j++) {
-        if (arr[j] === 'a') {
-            arr[j] = '10';
-        } else if (arr[j] === 'b') {
-            arr[j] = '11';
-        } else if (arr[j] === 'c') {
-            arr[j] = '12';
-        } else if (arr[j] === 'd') {
-            arr[j] = '13';
-        } else if (arr[j] === 'e') {
-            arr[j] = '14';
-        } else if (arr[j] === 'f') {
-            arr[j] = '15';
-        }
-    }
-    let firstNumber = arr.slice(0, 2);
-    let secondNumber = arr.slice(2, 4);
-    let thirdNumber = arr.slice(4);
-
-    let R = +firstNumber[0] * 16 + +firstNumber[1];
-    let G = +secondNumber[0] * 16 + +secondNumber[1];
-    let B = +thirdNumber[0] * 16 + +thirdNumber[1];
-    return console.log('RGB (' + R + ',' + G + ',' + B + ')');
+const convertHexaToRgb = (hex) => {
+    const rgbColorComponents = hex.replace(/^#/, '').split(/(.{2})/, 6).filter((v) => v).map((v) => parseInt(v, 16));
+    return `rgb(${rgbColorComponents.join(',')})`;
 };
 
 convertHexaToRgb('#41aabb');
