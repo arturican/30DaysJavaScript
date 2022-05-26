@@ -386,10 +386,27 @@ const convertRGBtoHex = (rgb) => {
 convertRGBtoHex('rgb(11, 255, 99)');
 
 const generateColors = (numberName, count) => {
-    if (numberName == 'hex') {
-        arrayOfHexaColors(count);
-    } else if (numberName == 'rgb') {
-        // rgbColorGenerator(count);
+    if (numberName === 'hex') {
+        let array = [];
+        for (let i = 0; i < count; i++) {
+            let str = '';
+            for (let j = 0; j < 3; j++) {
+                str += Math.floor(Math.random() * 255 + 1).toString(16);
+            }
+            array.push('#' + str);
+        }
+        return array;
+
+    } else if (numberName === 'rgb') {
+        let array = [];
+        for (let i = 0; i < count; i++) {
+            let str = [];
+            for (let j = 0; j < 3; j++) {
+                str.push(Math.floor(Math.random() * 255 + 1));
+            }
+            array.push('rgb (' + str + ')');
+        }
+        return array;
     }
 };
 generateColors('hex', 2);
