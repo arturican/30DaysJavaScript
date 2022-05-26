@@ -411,7 +411,7 @@ const generateColors = (numberName, count) => {
 };
 generateColors('hex', 2);
 
-let arr = [1, 2, 3];
+
 const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
         let j = array[i];
@@ -419,25 +419,25 @@ const shuffleArray = (array) => {
         array[i] = array[x];
         array[x] = j;
     }
-    return console.log(arr);
+    return array;
 };
 
-shuffleArray(arr);
+shuffleArray([1, 2, 3]);
 
 const factorial = (number) => {
     for (let i = number - 1; i > 0; i--) {
         number *= i;
     }
-    return console.log(number);
+    return number;
 };
 
 factorial(5);
 
 const isEmpty = (check) => {
     if (check == true) {
-        return console.log('Параметр не пустой');
+        console.log('Параметр не пустой');
     } else {
-        return console.log('Параметр  пустой');
+        console.log('Параметр  пустой');
     }
 };
 
@@ -448,7 +448,7 @@ const sumAllNumbs = (...args) => {
     for (const element of args) {
         sum += element;
     }
-    return console.log(sum);
+    return sum;
 };
 
 sumAllNumbs(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
@@ -462,7 +462,7 @@ const sumOfArrayItems = (array) => {
             return console.log('элемент массива не является числом');
         }
     }
-    return console.log(sum);
+    return sum;
 };
 
 sumOfArrayItems([1, 2, 'хуй', 4, 5]);
@@ -476,7 +476,7 @@ const medium = (array) => {
             return console.log('элемент массива не является числом');
         }
     }
-    return console.log(sum / array.length);
+    return sum / array.length;
 };
 
 medium([1, 2, 'хуй', 4, 5]);
@@ -489,7 +489,7 @@ const modifyArray = (array) => {
             array[4] = array[4].toUpperCase();
         }
     }
-    return console.log(array);
+    return array;
 };
 
 modifyArray(['Google', 'Facebook', 'Apple', 'Amazon']);
@@ -501,7 +501,6 @@ const isPrime = (number) => {
             a += 1;
         }
     }
-    console.log(a);
     if (a < 2) {
         return console.log('простое число');
     } else {
@@ -547,7 +546,7 @@ const SevenRandomNumbers = () => {
             arr.push(randomNumber);
         }
     }
-    return console.log(arr);
+    return arr;
 };
 
 SevenRandomNumbers();
