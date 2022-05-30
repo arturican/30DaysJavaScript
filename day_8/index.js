@@ -124,3 +124,21 @@ const countUsersPoints = function() {
     return count;
 }
 countUsersPoints();
+
+//2.3 Find people who are MERN stack developer from the users object
+
+const findPeopleStackMERN = function() {
+    const keys = Object.keys(users);
+    const value = Object.values(users);
+    person = [];
+    for (let i = 0; i < value.length; i++) {
+        let str = value[i].skills.join(',');
+        if (str.match('MongoDB,Express,React,Node')) {
+            person.push(keys[i]);
+        }
+
+    }
+    return person.join(', ');
+}
+
+findPeopleStackMERN();
