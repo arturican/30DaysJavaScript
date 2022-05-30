@@ -104,3 +104,37 @@ const findMaxSkills = function() {
     return keys[personMaxSkills];
 }
 findMaxSkills();
+
+//2.2 Count logged in users, count users having greater than equal to 50 points from the following object.
+const countUsers = function() {
+    const countUsers0fObject = Object.keys(users).length;
+    return countUsers0fObject;
+
+}
+countUsers();
+
+const countUsersPoints = function() {
+    const keys = Object.keys(users);
+    const value = Object.values(users);
+    const personsPoints = [];
+    const personPointsOf50 = [];
+    for (let i = 0; i < value.length; i++) {
+        personsPoints.push(value[i].points)
+
+    }
+    for (let j = 0; j < personsPoints.length; j++) {
+        if (personsPoints[j] >= 50) {
+            personPointsOf50.push(keys[j]);
+        }
+
+    }
+    return personPointsOf50.join(',');
+}
+
+
+
+
+
+
+
+countUsersPoints();
