@@ -114,27 +114,13 @@ const countUsers = function() {
 countUsers();
 
 const countUsersPoints = function() {
-    const keys = Object.keys(users);
     const value = Object.values(users);
-    const personsPoints = [];
-    const personPointsOf50 = [];
+    let count = 0;
     for (let i = 0; i < value.length; i++) {
-        personsPoints.push(value[i].points)
+        if (value[i].points >= 50)
+            count += 1;
 
     }
-    for (let j = 0; j < personsPoints.length; j++) {
-        if (personsPoints[j] >= 50) {
-            personPointsOf50.push(keys[j]);
-        }
-
-    }
-    return personPointsOf50.join(',');
+    return count;
 }
-
-
-
-
-
-
-
 countUsersPoints();
