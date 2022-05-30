@@ -142,3 +142,30 @@ const findPeopleStackMERN = function() {
 }
 
 findPeopleStackMERN();
+
+//2.4 Set your name in the users object without modifying the original users object
+
+users.Arhtur = {};
+
+//2.5 Get all keys or properties of users object
+
+const keys = Object.keys(users);
+
+//2.6 Get all the values of users object
+
+const value = Object.values(users);
+
+//2.7  Use the countries object to print a country name, capital, populations and languages
+
+const countries = new Object();
+countries['Russia'] = {};
+countries['Russia'].name = 'Russian Federation';
+countries['Russia'].capital = 'Moscow';
+countries['Russia'].populations = 'russian'; 
+countries['Russia'].languages = 'russian';
+countries['America'] = {};
+countries.America.name = 'United States of America';
+countries.America.capital = 'Washington';
+countries.America.populations = 'american'; 
+countries.America.languages = 'english';
+console.log(countries);
