@@ -176,24 +176,48 @@ console.log(countries);
 // accountInfo,addIncome, addExpense and accountBalance methods.
 // Incomes is a set of incomes and its description and expenses is a set of incomes and its description.
 
-const personAccount = new Object();
+const personAccount = {};
+let m = 0;
 personAccount.firstName = 'Ivan';
 personAccount.lastName = 'Ivanov';
 personAccount.incomes = {};
-personAccount.incomes.money;
-personAccount.expenses;
-
-personAccount.totalExpense;
+personAccount.incomes.money = [];
+personAccount.incomes.description = [];
+personAccount.expenses = {};
+personAccount.expenses.money = [];
+personAccount.expenses.description = [];
 personAccount.accountInfo = 'arturican';
 personAccount.addIncome = function(money, description) {
-
-    personAccount.incomes.money: money;
-    personAccount.incomes.description: description;
-
+    personAccount.incomes.money.push(money)
+    personAccount.incomes.description.push(description);
 };
-personAccount.addExpense = function(money, description) {};
-personAccount.accountBalance = function() {};
+personAccount.addExpense = function(money, description) {
+    personAccount.expenses.money.push(money);
+    personAccount.expenses.description.push(description);
+};
+personAccount.totalIncomes = function (){
+    let count = 0;
+    for (i = 0; i < personAccount.incomes.money.length; i++){
+         count += personAccount.incomes.money[i];
+    }
+    return count;
+}
+personAccount.totalExpense = function () {
+    let count = 0;
+    for (i = 0; i < personAccount.expenses.money.length; i++){
+         count += personAccount.expenses.money[i];
+    }
+    return count;
+};
+personAccount.accountBalance = function() {
+    return personAccount.totalIncomes() - personAccount.totalExpense()
+};
 console.log(personAccount);
-personAccount.addIncome(100, 'бухло');
-personAccount.addIncome(300, 'бухло');
-//personAccount.totalIncome = personAccount.incomes.money;
+personAccount.addIncome(10000, 'аванс');
+personAccount.addIncome(30000, 'зп');
+personAccount.addIncome(10000, 'аренда квартиры');
+personAccount.addExpense(1000, 'водка');
+personAccount.addExpense(50, 'сыр');
+console.log(personAccount.totalIncomes());
+console.log(personAccount.totalExpense());
+console.log(personAccount.accountBalance());
