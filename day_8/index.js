@@ -161,11 +161,39 @@ const countries = new Object();
 countries['Russia'] = {};
 countries['Russia'].name = 'Russian Federation';
 countries['Russia'].capital = 'Moscow';
-countries['Russia'].populations = 'russian'; 
+countries['Russia'].populations = 'russian';
 countries['Russia'].languages = 'russian';
 countries['America'] = {};
 countries.America.name = 'United States of America';
 countries.America.capital = 'Washington';
-countries.America.populations = 'american'; 
+countries.America.populations = 'american';
 countries.America.languages = 'english';
 console.log(countries);
+
+//LEVEL 3
+//3.1 Create an object literal called personAccount.
+// It has firstName, lastName, incomes, expenses properties and it has totalIncome, totalExpense,
+// accountInfo,addIncome, addExpense and accountBalance methods.
+// Incomes is a set of incomes and its description and expenses is a set of incomes and its description.
+
+const personAccount = new Object();
+personAccount.firstName = 'Ivan';
+personAccount.lastName = 'Ivanov';
+personAccount.incomes = {};
+personAccount.incomes.money;
+personAccount.expenses;
+
+personAccount.totalExpense;
+personAccount.accountInfo = 'arturican';
+personAccount.addIncome = function(money, description) {
+
+    personAccount.incomes.money: money;
+    personAccount.incomes.description: description;
+
+};
+personAccount.addExpense = function(money, description) {};
+personAccount.accountBalance = function() {};
+console.log(personAccount);
+personAccount.addIncome(100, 'бухло');
+personAccount.addIncome(300, 'бухло');
+//personAccount.totalIncome = personAccount.incomes.money;
