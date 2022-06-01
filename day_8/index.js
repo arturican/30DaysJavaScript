@@ -337,3 +337,15 @@ let createdAt = showDateTime();
 }
 signUp('Artur', '1243', 'arturican@gmail.com');
 signUp('Arturican', '1243', 'arturican@gmail.com');
+
+
+const signIn = function (username, password) {
+  for(i = 0; i < users.length; i++){
+     if ((users[i].username === username && users[i].password === password)){
+     return console.log('Вы вошли в приложение ' + users[i].username);}
+    }
+    return console.log('Этот аккаунт не существует или пароль не верен'); 
+
+}
+
+signIn('Thomas', '123333');
