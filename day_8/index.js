@@ -195,17 +195,17 @@ personAccount.addExpense = function(money, description) {
     personAccount.expenses.money.push(money);
     personAccount.expenses.description.push(description);
 };
-personAccount.totalIncomes = function (){
+personAccount.totalIncomes = function() {
     let count = 0;
-    for (i = 0; i < personAccount.incomes.money.length; i++){
-         count += personAccount.incomes.money[i];
+    for (i = 0; i < personAccount.incomes.money.length; i++) {
+        count += personAccount.incomes.money[i];
     }
     return count;
 }
-personAccount.totalExpense = function () {
+personAccount.totalExpense = function() {
     let count = 0;
-    for (i = 0; i < personAccount.expenses.money.length; i++){
-         count += personAccount.expenses.money[i];
+    for (i = 0; i < personAccount.expenses.money.length; i++) {
+        count += personAccount.expenses.money[i];
     }
     return count;
 };
@@ -228,13 +228,12 @@ console.log(personAccount.accountBalance());
 // he has already an account.
 //b. Create a function called signIn which allows user to sign in to the application
 
-const users = [
-    {
+const users = [{
         _id: 'ab12ex',
         username: 'Alex',
         email: 'alex@alex.com',
         password: '123123',
-        createdAt:'08/01/2020 9:00 AM',
+        createdAt: '08/01/2020 9:00 AM',
         isLoggedIn: false
     },
     {
@@ -242,7 +241,7 @@ const users = [
         username: 'Asab',
         email: 'asab@asab.com',
         password: '123456',
-        createdAt:'08/01/2020 9:30 AM',
+        createdAt: '08/01/2020 9:30 AM',
         isLoggedIn: true
     },
     {
@@ -250,7 +249,7 @@ const users = [
         username: 'Brook',
         email: 'brook@brook.com',
         password: '123111',
-        createdAt:'08/01/2020 9:45 AM',
+        createdAt: '08/01/2020 9:45 AM',
         isLoggedIn: true
     },
     {
@@ -258,7 +257,7 @@ const users = [
         username: 'Martha',
         email: 'martha@martha.com',
         password: '123222',
-        createdAt:'08/01/2020 9:50 AM',
+        createdAt: '08/01/2020 9:50 AM',
         isLoggedIn: false
     },
     {
@@ -266,86 +265,96 @@ const users = [
         username: 'Thomas',
         email: 'thomas@thomas.com',
         password: '123333',
-        createdAt:'08/01/2020 10:00 AM',
+        createdAt: '08/01/2020 10:00 AM',
         isLoggedIn: false
     }
-    ];
+];
 
-    const products = [
-  {
-    _id: 'eedfcf',
-    name: 'mobile phone',
-    description: 'Huawei Honor',
-    price: 200,
-    ratings: [
-      { userId: 'fg12cy', rate: 5 },
-      { userId: 'zwf8md', rate: 4.5 }
-    ],
-    likes: []
-  },
-  {
-    _id: 'aegfal',
-    name: 'Laptop',
-    description: 'MacPro: System Darwin',
-    price: 2500,
-    ratings: [],
-    likes: ['fg12cy']
-  },
-  {
-    _id: 'hedfcg',
-    name: 'TV',
-    description: 'Smart TV:Procaster',
-    price: 400,
-    ratings: [{ userId: 'fg12cy', rate: 5 }],
-    likes: ['fg12cy']
-  }
+const products = [{
+        _id: 'eedfcf',
+        name: 'mobile phone',
+        description: 'Huawei Honor',
+        price: 200,
+        ratings: [
+            { userId: 'fg12cy', rate: 5 },
+            { userId: 'zwf8md', rate: 4.5 }
+        ],
+        likes: []
+    },
+    {
+        _id: 'aegfal',
+        name: 'Laptop',
+        description: 'MacPro: System Darwin',
+        price: 2500,
+        ratings: [],
+        likes: ['fg12cy']
+    },
+    {
+        _id: 'hedfcg',
+        name: 'TV',
+        description: 'Smart TV:Procaster',
+        price: 400,
+        ratings: [{ userId: 'fg12cy', rate: 5 }],
+        likes: ['fg12cy']
+    }
 ]
 
-const signUp = function (username, password, email) {
-  for(i = 0; i < users.length; i++){
-      if(users[i].username == username){
-          return console.log('Этот аккаунт уже существует');
-      } 
-  }
-  let _id = (Math.random() + 1).toString(36).substring(7);
-  for(i = 0; i < users.length; i++){
-  if(users[i]._id == _id){
-    _id = (Math.random() + 1).toString(36).substring(7);
-  }
-  }
-  const showDateTime = () => {
-    const now = new Date();
-    const year = now.getFullYear(); // return year
-    let month = now.getMonth() + 1; // return month(0 - 11)
-    const date = now.getDate(); // return date (1 - 31)
-    const hours = now.getHours(); // return number (0 - 23)
-    let minutes = now.getMinutes(); // return number (0 -59)
-    if (month < 10) {
-        month = month.toString().padStart(2, "0");
+const signUp = function(username, password, email) {
+    for (i = 0; i < users.length; i++) {
+        if (users[i].username == username) {
+            return console.log('Этот аккаунт уже существует');
+        }
     }
-    if (minutes < 10) {
-        minutes = minutes.toString().padStart(2, "0");
+    let _id = (Math.random() + 1).toString(36).substring(7);
+    for (i = 0; i < users.length; i++) {
+        if (users[i]._id == _id) {
+            _id = (Math.random() + 1).toString(36).substring(7);
+        }
     }
-    return `${date}/${month}/${year} ${hours}:${minutes}`;
-};
-let createdAt = showDateTime();
-
-
-
- 
- users.push({_id: _id, username: username, email: email, password: password, createdAt: createdAt})
+    const showDateTime = () => {
+        const now = new Date();
+        const year = now.getFullYear(); // return year
+        let month = now.getMonth() + 1; // return month(0 - 11)
+        const date = now.getDate(); // return date (1 - 31)
+        const hours = now.getHours(); // return number (0 - 23)
+        let minutes = now.getMinutes(); // return number (0 -59)
+        if (month < 10) {
+            month = month.toString().padStart(2, "0");
+        }
+        if (minutes < 10) {
+            minutes = minutes.toString().padStart(2, "0");
+        }
+        return `${date}/${month}/${year} ${hours}:${minutes}`;
+    };
+    let createdAt = showDateTime();
+    users.push({ _id: _id, username: username, email: email, password: password, createdAt: createdAt })
 }
 signUp('Artur', '1243', 'arturican@gmail.com');
 signUp('Arturican', '1243', 'arturican@gmail.com');
 
 
-const signIn = function (username, password) {
-  for(i = 0; i < users.length; i++){
-     if ((users[i].username === username && users[i].password === password)){
-     return console.log('Вы вошли в приложение ' + users[i].username);}
+const signIn = function(username, password) {
+    for (i = 0; i < users.length; i++) {
+        if ((users[i].username === username && users[i].password === password)) {
+            return console.log('Вы вошли в приложение ' + users[i].username);
+        }
     }
-    return console.log('Этот аккаунт не существует или пароль не верен'); 
+    return console.log('Этот аккаунт не существует или пароль не верен');
 
 }
 
 signIn('Thomas', '123333');
+
+const rateProduct = function(user, rate, id) {
+    for (i = 0; i < products.length; i++) {
+        if (products[i]._id == id) {
+            products[i].ratings.push({
+                userId: user,
+                rate: rate
+            })
+        }
+    }
+
+}
+
+rateProduct('Thomas', 5, 'hedfcg');
