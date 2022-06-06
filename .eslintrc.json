@@ -1,0 +1,26 @@
+{
+  "extends": ["eslint:recommended", "prettier", "plugin:json/recommended", "plugin:react/recommended"],
+  "rules": {
+    "prettier/prettier": "error"
+  },
+  "plugins": ["prettier", "json", "react", "pug"],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
