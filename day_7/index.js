@@ -1,320 +1,573 @@
-const fullName = (firstName = 'Артур', lastName = 'Москвичёв') => {
-    let space = ' ';
-    let fullName = firstName + space + lastName;
-    return fullName;
-}
+/* eslint-disable prettier/prettier */
+const fullNameFirst = (firstName = 'Артур', lastName = 'Москвичёв') => {
+    console.log(`${firstName} ${lastName}`);
+};
+fullNameFirst();
 
-const addNumber = (firstNumber, secondNumber) => {
-    let sum = firstNumber + secondNumber;
-    return sum;
-}
+const fullNameSecond = (firstName, lastName) => {
+    return firstName + ' ' + lastName;
+};
+fullNameSecond('Денис', 'Токарев');
+
+const addNumbers = (firstNumber, secondNumber) => {
+    return firstNumber + secondNumber;
+};
+
+addNumbers(1, 2);
 
 const areaOfRectangle = (length, width) => {
-    let area = length * width;
-    return area;
-}
+    return length * width;
+};
+
+areaOfRectangle(10, 8);
 
 const perimeterOfRectangle = (length, width) => {
-    let perimeter = 2 * (length + width);
-    return perimeter;
-}
+    return 2 * (length + width);
+};
+
+perimeterOfRectangle(10, 8);
 
 const volumeOfRectPrism = (length, width, heigth) => {
-    let volume = length * width * heigth;
-    return volume;
-}
+    return length * width * heigth;
+};
 
+volumeOfRectPrism(10, 12, 13);
 
 const areaOfCircle = (radius) => {
-    let areaCircle = Math.PI * radius * radius;
-    return areaCircle
-}
+    return Math.PI * Math.pow(radius, 2);
+};
 
-const lengthOfCircle = (radius) => {
-    let lengthCircle = 2 * Math.PI * radius;
-    return lengthCircle
-}
+areaOfCircle(10);
 
+const circleLength = (radius) => {
+    return 2 * Math.PI * radius;
+};
+
+circleLength(10);
 
 const density = (weight, volume) => {
-    let density = weight / volume;
-    return density;
-}
+    return weight / volume;
+};
+
+density(10, 12);
 
 const speed = (distance, time) => {
-    let speed = distance / time;
-    return speed;
-}
+    return distance / time;
+};
 
-const ITM = (weight, heigth) => {
-    let itm = weight / (heigth * heigth)
-    if (itm < 18.5) {
-        return console.log('Недостаточный вес')
-    } else if (itm >= 18.5 && itm <= 24.9) {
-        return console.log('Нормальный вес');
-    } else if (itm >= 25 && itm <= 29.9) {
-        return console.log('Избыточный вес');
-    } else {
-        return console.log('Ожирение');
+speed(100, 2);
+
+const bmi = (weight, heigth) => {
+    let bmi = weight / (heigth * heigth);
+    if (bmi < 18.5) {
+        return console.log('Недостаточный вес');
     }
-}
+    if (bmi <= 24.9) {
+        return console.log('Нормальный вес');
+    }
+    if (bmi <= 29.9) {
+        return console.log('Избыточный вес');
+    }
+    return console.log('Ожирение');
+};
 
+bmi(180, 108);
 
 const checkSeason = (month) => {
-    if (month == 'декабрь' || month == 'январь' || month == 'февраль') {
+    if (month === 'декабрь' || month === 'январь' || month === 'февраль') {
         return console.log('зима');
-    } else if (month == 'март' || month == 'апрель' || month == 'май') {
-        return console.log('весна');
-    } else if (month == 'июль' || month == 'июнь' || month == 'август') {
-        return console.log('лето');
-    } else if (month == 'сентябрь' || month == 'октяюбрь' || month == 'ноябрь') {
-        return console.log('осень');
     }
-}
+    if (month === 'март' || month === 'апрель' || month === 'май') {
+        return console.log('весна');
+    }
+    if (month === 'июль' || month === 'июнь' || month === 'август') {
+        return console.log('лето');
+    }
+    return console.log('осень');
+};
+
+checkSeason('февраль');
 
 const findMax = (firstNumber, secondNumber, thirdNumber) => {
-    if (firstNumber >= secondNumber && firstNumber >= thirdNumber) {
+    if (firstNumber >= secondNumber >= thirdNumber) {
         return console.log(firstNumber);
-    } else if (secondNumber >= firstNumber && secondNumber >= thirdNumber) {
-        return console.log(secondNumber);
-    } else if (thirdNumber >= firstNumber && thirdNumber >= secondNumber) {
-        return console.log(thirdNumber);
     }
-}
-let a = 10;
-let b = 2;
-let c = 0;
-const solveLinEquation = (a, b, c) => {
-    x = (-(b * y) - c) / (-a);
-    y = ((-a * x) - c) / (-b);
-    return console.log(x, y);
-}
+    if (secondNumber >= thirdNumber) {
+        return console.log(secondNumber);
+    }
+    return console.log(thirdNumber);
+};
 
+findMax(1, 0, 2);
+// Вторая часть заданий 
+
+
+/*const solveLinEquation = (a, b, c) => {
+  let x = (-(b * y) - c) / -a;
+  let y = (-a * x - c) / -b;
+  return console.log(x, y);
+};
+
+solveLinEquation();
+*/
 
 const solveQuadratic = (a, b, c) => {
     let D = b * b - 4 * a * c;
+    let squareDiscriminant = Math.sqrt(D);
     if (D < 0) {
         return console.log('Корней нет');
-    } else if (D === 0) {
-        return console.log(-b / 2 * a);
-    } else if (D > 0) {
-        return console.log(((-b + Math.sqrt(D)) / 2 * a), ((-b - Math.sqrt(D)) / 2 * a))
     }
-}
-
-const printArray = (Arr) => {
-    for (const element of Arr) {
-        console.log(element);
+    if (D === 0) {
+        return console.log((-b / 2) * a);
     }
-}
+    return console.log(((-b + squareDiscriminant) / 2) * a, ((-b - squareDiscriminant) / 2) * a);
+};
 
-let countries = ['Afghanistan', 'Albania', 'Algeria', 'American Samoa', 'Andorra', 'Angola', 'Anguilla', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan', 'Bangladesh', 'Barbados', 'Bahamas', 'Bahrain', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Brazil', 'British Indian Ocean Territory', 'British Virgin Islands', 'Brunei Darussalam', 'Bulgaria', 'Burkina Faso', 'Burma', 'Burundi', 'Cambodia', 'Cameroon', 'Canada',
-    'Cape Verde', 'Cayman Islands', 'Central African Republic', 'Chad', 'Chile', 'China', 'Christmas Island', 'Cocos (Keeling) Islands', 'Colombia', 'Comoros', 'Congo-Brazzaville', 'Congo-Kinshasa', 'Cook Islands', 'Costa Rica', 'Croatia', 'Cura?ao', 'Cyprus', 'Czech Republic', 'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'East Timor', 'Ecuador', 'El Salvador', 'Egypt', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Ethiopia', 'Falkland Islands', 'Faroe Islands', 'Federated States of Micronesia', 'Fiji', 'Finland', 'France', 'French Guiana', 'French Polynesia', 'French Southern Lands', 'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Gibraltar', 'Greece', 'Greenland', 'Grenada', 'Guadeloupe', 'Guam', 'Guatemala', 'Guernsey', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Heard and McDonald Islands', 'Honduras', 'Hong Kong', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iraq', 'Ireland', 'Isle of Man', 'Israel',
-    'Italy', 'Jamaica', 'Japan', 'Jersey', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macau', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Martinique', 'Mauritania', 'Mauritius', 'Mayotte', 'Mexico', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Morocco', 'Mozambique', 'Namibia', 'Nauru', 'Nepal', 'Netherlands', 'New Caledonia', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Niue', 'Norfolk Island', 'Northern Mariana Islands', 'Norway', 'Oman', 'Pakistan', 'Palau', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Pitcairn Islands', 'Poland', 'Portugal', 'Puerto Rico', 'Qatar', 'R?union', 'Romania', 'Russia', 'Rwanda', 'Saint Barth?lemy', 'Saint Helena', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Martin', 'Saint Pierre and Miquelon', 'Saint Vincent', 'Samoa', 'San Marino', 'S?o Tom? and Pr?ncipe', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Sint Maarten', 'Slovakia', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'South Georgia', 'South Korea', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'Svalbard and Jan Mayen', 'Sweden', 'Swaziland', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', 'Togo', 'Tokelau', 'Tonga', 'Trinidad and Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Turks and Caicos Islands', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Vatican City', 'Vietnam', 'Venezuela', 'Wallis and Futuna', 'Western Sahara', 'Yemen', 'Zambia', 'Zimbabwe'
-];
+solveQuadratic(1, 2, 3);
 
+const printArray = () => {
+    let countries = [
+        'Afghanistan',
+        'Albania',
+        'Algeria',
+        'American Samoa',
+        'Andorra',
+        'Angola',
+        'Anguilla',
+        'Antigua and Barbuda',
+        'Argentina',
+        'Armenia',
+    ];
+    countries.forEach((element) => console.log(element));
+};
 
+printArray();
 
 const showDateTime = () => {
-    let Time = new Date();
-    const now = new Date()
-    const year = now.getFullYear() // return year
-    let month = now.getMonth() + 1 // return month(0 - 11)
-    const date = now.getDate() // return date (1 - 31)
-    const hours = now.getHours() // return number (0 - 23)
-    const minutes = now.getMinutes() // return number (0 -59)
+    const now = new Date();
+    const year = now.getFullYear(); // return year
+    let month = now.getMonth() + 1; // return month(0 - 11)
+    const date = now.getDate(); // return date (1 - 31)
+    const hours = now.getHours(); // return number (0 - 23)
+    let minutes = now.getMinutes(); // return number (0 -59)
     if (month < 10) {
-        month = ('0' + month);
+        month = month.toString().padStart(2, "0");
     }
-    return console.log(`${date}.${month}.${year} ${hours}:${minutes}`);
-}
+    if (minutes < 10) {
+        minutes = minutes.toString().padStart(2, "0");
+    }
+    return `${date}.${month}.${year} ${hours}:${minutes}`;
+};
+
+showDateTime();
 
 const swapValues = (x, y) => {
-    let a = x;
-    let b = y;
-    x = b;
-    y = a;
-    return console.log(x, y);
-}
-let newarr = [];
+    let [a, b] = [x, y];
+    [x, y] = [b, a];
+    console.log(x, y);
+};
+
+swapValues(1, 2);
+
 const reverseArray = (arr) => {
-    for (i = arr.length - 1; i >= 0; i--) {
-        newarr.push(arr[i]);
+    let newArr = [];
+    for (let i = arr.length - 1; i >= 0; i--) {
+        newArr.push(arr[i]);
     }
-    return console.log(newarr);
+    return newArr;
+};
+
+reverseArray([1, 2]);
+
+const capitalizeArray = (arrCoounries1) => {
+
+    const upperCase = (item) => {
+        return item.toUpperCase();
+    };
+    let arr = arrCoounries1.map(upperCase);
+    return arr;
+};
+
+capitalizeArray([
+    'Afghanistan',
+    'Albania',
+    'Algeria',
+    'Andorra',
+    'Angola',
+    'Antigua and Barbuda',
+    'Argentina',
+    'Armenia',
+    'Australia',
+]);
+
+const addItem = (item) => [item];
+addItem('хуй');
+
+const removeItem = (item) => {
+    const countries1 = [
+        'Afghanistan',
+        'Albania',
+        'Algeria',
+        'Andorra',
+        'Angola',
+        'Antigua and Barbuda',
+        'Argentina',
+        'Armenia',
+        'Australia',
+    ];
+    countries1.splice(item, 1);
+    return countries1;
+};
+
+removeItem(1);
+
+const sumOfNumbers = (number) => {
+    let sum = 0;
+    for (let i = 0; i <= number; i++) {
+        sum += i;
+    }
+    return sum;
+};
+
+sumOfNumbers(3);
+
+const sumOfNumbersSecond = (number) => {
+    let arr = [];
+    for (let i = 1; i <= number; i++) {
+        arr.push(i);
+    }
+    let result = arr.reduce((sum, current) => sum + current, 0)
+
+    return result;
+};
+
+sumOfNumbersSecond(3);
+
+const sumOfOdds = (number) => {
+    let sumr = 0;
+    for (let i = 1; i <= number; i += 2) {
+        sumr += i;
+    }
+    return sumr;
+};
+
+sumOfOdds(10);
+
+const evensAndOdds = (number) => {
+    let evens;
+    let odds;
+    if (number % 2 === 0) {
+        evens = number / 2 + 1;
+        odds = number / 2;
+    } else {
+        evens = Math.floor(number / 2);
+        odds = Math.floor(number / 2 + 1);
+    }
+
+    console.log('Четных чисел ' + evens + ' ' + 'Нечетных чисел ' + odds);
+};
+
+evensAndOdds(11);
+
+const summ = (...theArgs) => {
+    return theArgs.reduce((sum, current) => sum + current, 0)
+};
+
+summ(1, 3, 10);
+
+const randomUserIp = () => {
+    let arr = [];
+    for (let i = 0; arr.length < 4; i++) {
+        arr.push((Math.floor(Math.random() * 255)) + 1)
+    }
+
+    return `${arr[0]}.${arr[1]}.${arr[2]}.${arr[3]}`;
 }
 
+randomUserIp();
+
+const randomMacAddress = () => {
+    let arr16 = [];
+    for (let i = 0; arr16.length < 6; i++) {
+        arr16.push((Math.floor(Math.random() * 255) + 1).toString(16));
+    }
+    for (let j = 0; j < arr16.length; j++) {
+        if (arr16[j].length < 2) {
+            arr16[j] = '0' + arr16[j];
+        }
+
+    }
+
+    return `${arr16[0]}:${arr16[1]}:${arr16[2]}:${arr16[3]}:${arr16[4]}:${arr16[5]}`;
+};
+
+randomMacAddress();
+
+const randomHexaNumberGenerator = () => {
+    let HexaNumber = (Math.floor(Math.random() * 10000000)).toString(16);
+    return HexaNumber;
+}
+
+randomHexaNumberGenerator();
 
 const userIdGenerator = () => {
+    let userId = Math.random().toString(36).substring(2, 9);
+    return userId;
+}
+userIdGenerator();
 
+const userIdGeneratorSecond = () => {
     let symbol = prompt('Введите количество символов');
     let generator = prompt('Введите количество генераций');
-
-    let str = "ABCDEFGHIJKLMNOPQRSTUVWYZXabcdefghijklmnopqrstuvwxyz0123456789";
+    let str = 'ABCDEFGHIJKLMNOPQRSTUVWYZXabcdefghijklmnopqrstuvwxyz0123456789';
     let str2 = '';
-    for (i = 0; i <= symbol; i++) {
-        str2 += str.charAt(Math.floor((Math.random() * (str.length - 1))));
-    }
-    return console.log(str2);
-}
-
-const rgbColorGenerator = (count) => {
-    let array = [];
-    for (i = 0; i <= count - 1; i++) {
-        let str = '';
-        for (j = 0; j <= 2; j++) {
-            str += String((Math.floor(Math.random() * 255 + 1))) + ',';
+    for (let j = 0; j <= generator - 1; j++) {
+        for (let i = 0; i <= symbol - 1; i++) {
+            str2 += str.charAt(Math.floor(Math.random() * (str.length - 1)));
         }
-        let str2 = str.substring(0, str.length - 1);
-        array.push(str2);
-
-
-
+        str2 = str2 + '\n';
     }
-    return console.log(array);
+
+    return console.log(str2);
+};
+
+userIdGeneratorSecond();
+
+const rgbColorGenerator = () => {
+    let arr = [];
+    for (let i = 0; i < 3; i++) {
+        arr.push(Math.floor(Math.random() * 255 + 1));
+    }
+    let rgbColor = 'rgb(' + arr.join() + ')'
+    return rgbColor;
 }
+rgbColorGenerator();
 
 const arrayOfHexaColors = (count) => {
-    let hexa = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
     let array = [];
-
-
-    for (i = 0; i <= count - 1; i++) {
+    for (let i = 0; i < count; i++) {
         let str = '';
-        for (j = 0; j <= 6; j++) {
-            str += hexa[Math.floor(Math.random() * 15 + 1)];
+        for (let j = 0; j < 3; j++) {
+            str += Math.floor(Math.random() * 255 + 1).toString(16);
         }
         array.push('#' + str);
-
     }
+    return array;
+};
 
-    return console.log(array);
-}
+arrayOfHexaColors(3000);
 
-const convertHexaToRgb = (hexa) => {
-    let arr = [];
-    let str = hexa;
-    let str2 = ''
-    if (str[0] === '#') {
-        for (i = 1; i <= str.length - 1; i++) {
-            str2 += str[i];
-        }
-    }
-    arr = str2.split('');
-    for (j = 0; j <= arr.length - 1; j++) {
-        if (arr[j] === 'a') {
-            arr[j] = '10';
-        } else if (arr[j] === 'b') {
-            arr[j] = '11';
-        } else if (arr[j] === 'c') {
-            arr[j] = '12';
-        } else if (arr[j] === 'd') {
-            arr[j] = '13';
-        } else if (arr[j] === 'e') {
-            arr[j] = '14';
-        } else if (arr[j] === 'f') {
-            arr[j] = '15';
-        }
-    }
-    firstNumber = arr.slice(0, 2);
-    secondNumber = arr.slice(2, 4);
-    thirdNumber = arr.slice(4);
-
-    let R = +firstNumber[0] * 16 ** 1 + +firstNumber[1];
-    let G = +secondNumber[0] * 16 ** 1 + +secondNumber[1];
-    let B = +thirdNumber[0] * 16 ** 1 + +thirdNumber[1];
-
-    return console.log('RGB (' + R + ',' + G + ',' + B + ')');
-
-
-}
-
-const convertRGBtoHex = (hexa) => {
-    let arr = [];
-    let arr2 = [];
-    let arr3 = [];
-    let str = String(hexa);
-    let str2 = ''
-    if (str[0] === '#') {
-        for (i = 1; i <= str.length - 1; i++) {
-            str2 += str[i];
-        }
-    }
-    arr = str.split(',')
-        /*  for (j = 0; j <= arr.length - 1; j++) {
-        if (arr[j] === 'a') {
-            arr[j] = '10';
-        } else if (arr[j] === 'b') {
-            arr[j] = '11';
-        } else if (arr[j] === 'c') {
-            arr[j] = '12';
-        } else if (arr[j] === 'd') {
-            arr[j] = '13';
-        } else if (arr[j] === 'e') {
-            arr[j] = '14';
-        } else if (arr[j] === 'f') {
-            arr[j] = '15';
-        }
-    }
-    firstNumber = arr.slice(0, 2);
-    secondNumber = arr.slice(2, 4);
-    thirdNumber = arr.slice(4);
- 
-*/
-    arr2[0] = Math.floor(+arr[0] / 16);
-    arr2[1] = +arr[0] % 16;
-    arr2[2] = Math.floor(+arr[1] / 16);
-    arr2[3] = +arr[1] % 16;
-    arr2[4] = Math.floor(+arr[2] / 16);
-    arr2[5] = +arr[2] % 16;
-
-    for (j = 0; j <= arr2.length - 1; j++) {
-        if (arr2[j] === 10) {
-            arr2[j] = 'a';
-        } else if (arr2[j] === 11) {
-            arr2[j] = 'b';
-        } else if (arr2[j] === 12) {
-            arr2[j] = 'c';
-        } else if (arr2[j] === 13) {
-            arr2[j] = 'd';
-        } else if (arr2[j] === 14) {
-            arr2[j] = 'e';
-        } else if (arr2[j] === 15) {
-            arr2[j] = 'f';
-        }
-    }
-    arr3[0] = String(arr2[0]) + String(arr2[1]) + String(arr2[2]) + String(arr2[3]) + String(arr2[4]) + String(arr2[5]);
-
-    return console.log(arr3);
-
-}
-
-
-const arrayOfHexaColors2 = (count) => {
-    let hexa = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
+const arrayOfRgbColors = (count) => {
     let array = [];
-
-
-    for (i = 0; i <= count; i++) {
-        let str = '';
-        for (j = 0; j <= 6; j++) {
-            str += hexa[Math.floor(Math.random() * 15 + 1)];
+    for (let i = 0; i < count; i++) {
+        let str = [];
+        for (let j = 0; j < 3; j++) {
+            str.push(Math.floor(Math.random() * 255 + 1));
         }
-        array.push('#' + str);
-
+        array.push('rgb (' + str + ')');
     }
+    return array;
+};
 
-    return console.log(array);
-}
+arrayOfRgbColors(3000);
+
+const convertHexaToRgb = (hex) => {
+    const rgbColorComponents = hex.replace(/^#/, '').split(/(.{2})/, 6).filter((v) => v).map((v) => parseInt(v, 16));
+    return `rgb(${rgbColorComponents.join(',')})`;
+};
+
+convertHexaToRgb('#bff63');
+
+const convertRGBtoHex = (rgb) => {
+    const hexColorComponents = rgb.match(/\d+/g).map(Number).map((v) => v.toString(16));
+    return '#' + hexColorComponents.join('');
+};
+
+convertRGBtoHex('rgb(11, 255, 99)');
 
 const generateColors = (numberName, count) => {
-    if (numberName == 'hex') {
-        arrayOfHexaColors2(count);
-    } else if (numberName == 'rgb') {
-        rgbColorGenerator(count);
+    if (numberName === 'hex') {
+        let array = [];
+        for (let i = 0; i < count; i++) {
+            let str = '';
+            for (let j = 0; j < 3; j++) {
+                str += Math.floor(Math.random() * 255 + 1).toString(16);
+            }
+            array.push('#' + str);
+        }
+        return array;
 
+    } else if (numberName === 'rgb') {
+        let array = [];
+        for (let i = 0; i < count; i++) {
+            let str = [];
+            for (let j = 0; j < 3; j++) {
+                str.push(Math.floor(Math.random() * 255 + 1));
+            }
+            array.push('rgb (' + str + ')');
+        }
+        return array;
     }
+};
+generateColors('hex', 2);
 
-}
 
-generateColors('rgb', 2);
+const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = array[i];
+        let x = Math.floor(Math.random() * (i + 1));
+        array[i] = array[x];
+        array[x] = j;
+    }
+    return array;
+};
+
+shuffleArray([1, 2, 3]);
+
+const factorial = (number) => {
+    for (let i = number - 1; i > 0; i--) {
+        number *= i;
+    }
+    return number;
+};
+
+factorial(5);
+
+const isEmpty = (check) => {
+    if (check == true) {
+        console.log('Параметр не пустой');
+    } else {
+        console.log('Параметр  пустой');
+    }
+};
+
+isEmpty(1);
+
+const sumAllNumbs = (...args) => {
+    let sum = 0;
+    for (const element of args) {
+        sum += element;
+    }
+    return sum;
+};
+
+sumAllNumbs(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+const sumOfArrayItems = (array) => {
+    let sum = 0;
+    for (let i = 0; i <= array.length - 1; i++) {
+        if (typeof array[i] === 'number') {
+            sum += array[i];
+        } else {
+            return console.log('элемент массива не является числом');
+        }
+    }
+    return sum;
+};
+
+sumOfArrayItems([1, 2, 'хуй', 4, 5]);
+
+const average = (array) => {
+    let sum = 0;
+    for (let i = 0; i <= array.length - 1; i++) {
+        if (typeof array[i] === 'number') {
+            sum += array[i];
+        } else {
+            return console.log('элемент массива не является числом');
+        }
+    }
+    return sum / array.length;
+};
+
+average([1, 2, 'хуй', 4, 5]);
+
+const modifyArray = (array) => {
+    for (let i = 0; i <= array.length - 1; i++) {
+        if (array.length - 1 < 4) {
+            return console.log('Not Found');
+        } else {
+            array[4] = array[4].toUpperCase();
+        }
+    }
+    return array;
+};
+
+modifyArray(['Google', 'Facebook', 'Apple', 'Amazon']);
+
+const isPrime = (number) => {
+    let a = 0;
+    for (let i = 2; i <= number; i++) {
+        if (number % i == 0) {
+            a += 1;
+        }
+    }
+    if (a < 2) {
+        return console.log('простое число');
+    } else {
+        return console.log('Не простое число');
+    }
+};
+isPrime(71);
+
+const isCheckArray = (array) => {
+    let newArr = [];
+    let count = 0;
+    for (let i = 0; i <= array.length - 1; i++) {
+        newArr.push(array[i]);
+        if (typeof newArr.indexOf(0) == typeof newArr[i]) {
+            count += 1;
+        }
+    }
+    if (count === array.length) {
+        return console.log('Элементы уникальны');
+    } else {
+        return console.log('Элементы не уникальны');
+    }
+};
+
+isCheckArray([1, 'хуй', 3]);
+
+const isValidVariable = (value) => {
+    let valid = /_\$|_|\$/g;
+    if (value.match(valid)) {
+        return console.log('Не допустимая переменная');
+    } else {
+        return console.log('допустимая переменная');
+    }
+};
+
+isValidVariable('aa__');
+
+const SevenRandomNumbers = () => {
+    let arr = [];
+    while (arr.length <= 6) {
+        let randomNumber = Math.floor(Math.random() * 9 + 1);
+        if (arr.lastIndexOf(randomNumber) == -1) {
+            arr.push(randomNumber);
+        }
+    }
+    return arr;
+};
+
+SevenRandomNumbers();
+
+const reverseCountries = (arry) => {
+    let newArr = arry;
+    arry = [];
+    for (let i = newArr.length - 1; i >= 0; i--) {
+        arry.push(newArr[i]);
+    }
+    return arry;
+};
+
+reverseCountries([
+    'Afghanistan',
+    'Albania',
+    'Algeria',
+    'Andorra',
+    'Angola',
+    'Antigua and Barbuda',
+    'Argentina',
+    'Armenia',
+    'Australia',
+]);
