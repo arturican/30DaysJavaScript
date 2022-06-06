@@ -1,0 +1,57 @@
+{
+  "name": "30daysjavascript",
+  "version": "1.0.0",
+  "description": "делаю задания по JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precommit": "lint-staged",
+    "postinstall": "husky install",
+    "lint:js": "eslint './**/*.{js,jsx,json,pug}'",
+    "lint:css": "stylelint './**/*.css'",
+    "lint:js:fix": "eslint './**/*.{js,jsx,json,pug}' --fix",
+    "lint:css:fix": "stylelint './**/*.css' --fix",
+    "lint": "npm run lint:js & npm run lint:css & wait",
+    "lint:fix": "npm run lint:js:fix && npm run lint:css:fix",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "./**/*.{js,jsx,json,pug}": [
+      "eslint --fix"
+    ],
+    "./**/*.css": [
+      "stylelint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arturican/30DaysJavaScript.git"
+  },
+  "author": "arturican",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arturican/30DaysJavaScript/issues"
+  },
+  "homepage": "https://github.com/arturican/30DaysJavaScript#readme",
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-pug": "^1.2.4",
+    "eslint-plugin-react": "^7.28.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.4",
+    "prettier": "^2.5.1",
+    "stylelint": "^14.5.1",
+    "stylelint-config-css-modules": "^3.0.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-prettier": "^2.0.0"
+  }
+}
